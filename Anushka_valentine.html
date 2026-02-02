@@ -568,14 +568,8 @@
     </style>
 </head>
 <body>
-    <!-- Background Music -->
-    <audio id="bgMusic" loop>
-        <!-- Using a romantic instrumental from a free music source -->
-        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_4d3d0bc0d7.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Music Control Button -->
-    <button class="music-control" id="musicControl" title="Click to play/pause music">
+    <!-- Music Control Button (decorative) -->
+    <button class="music-control" id="musicControl" title="Music vibes! 🎵">
         🎵
     </button>
 
@@ -732,35 +726,21 @@
     </div>
 
     <script>
-        // Background Music Control
-        const bgMusic = document.getElementById('bgMusic');
+        // Music Control (Visual Effects Only)
         const musicControl = document.getElementById('musicControl');
-        let isPlaying = false;
+        let musicVibes = true;
 
-        // Try to play music on first user interaction
-        function initMusic() {
-            bgMusic.play().then(() => {
-                isPlaying = true;
-                musicControl.textContent = '🎵';
-                createMusicWaves();
-            }).catch(err => {
-                console.log('Autoplay prevented. Click the music button!');
-                isPlaying = false;
-                musicControl.textContent = '🔇';
-            });
-        }
-
-        // Music control button
+        // Music control button for visual effects
         musicControl.addEventListener('click', function() {
-            if (isPlaying) {
-                bgMusic.pause();
-                this.textContent = '🔇';
-                isPlaying = false;
-            } else {
-                bgMusic.play();
+            musicVibes = !musicVibes;
+            
+            if (musicVibes) {
                 this.textContent = '🎵';
-                isPlaying = true;
+                this.style.animation = 'musicPulse 2s ease-in-out infinite';
                 createMusicWaves();
+            } else {
+                this.textContent = '🔇';
+                this.style.animation = 'none';
             }
             
             // Create burst effect when clicked
@@ -787,7 +767,7 @@
 
         // Create music waves around the button
         function createMusicWaves() {
-            if (!isPlaying) return;
+            if (!musicVibes) return;
             
             const wave = document.createElement('div');
             wave.style.position = 'fixed';
@@ -804,7 +784,7 @@
             
             setTimeout(() => wave.remove(), 2000);
             
-            if (isPlaying) {
+            if (musicVibes) {
                 setTimeout(createMusicWaves, 1000);
             }
         }
@@ -825,9 +805,9 @@
         `;
         document.head.appendChild(style);
 
-        // Try to start music after a short delay (helps with autoplay restrictions)
+        // Start music vibes
         setTimeout(() => {
-            initMusic();
+            createMusicWaves();
         }, 1000);
 
         // Typing effect for the main message
