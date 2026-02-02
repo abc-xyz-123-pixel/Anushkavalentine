@@ -200,15 +200,6 @@
             }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
         .message {
             font-size: 1.3em;
             color: #333;
@@ -511,6 +502,7 @@
             50% { transform: scale(1.1); }
             75% { transform: scale(1.4); }
         }
+
         .music-control {
             position: fixed;
             bottom: 30px;
@@ -568,12 +560,10 @@
     </style>
 </head>
 <body>
-    <!-- Music Control Button (decorative) -->
     <button class="music-control" id="musicControl" title="Music vibes! 🎵">
         🎵
     </button>
 
-    <!-- Floating Music Notes -->
     <div class="music-note" style="left: 10%; animation-delay: 0s;">🎵</div>
     <div class="music-note" style="left: 30%; animation-delay: 1s;">🎶</div>
     <div class="music-note" style="left: 50%; animation-delay: 2s;">🎵</div>
@@ -726,11 +716,9 @@
     </div>
 
     <script>
-        // Music Control (Visual Effects Only)
         const musicControl = document.getElementById('musicControl');
         let musicVibes = true;
 
-        // Music control button for visual effects
         musicControl.addEventListener('click', function() {
             musicVibes = !musicVibes;
             
@@ -743,7 +731,6 @@
                 this.style.animation = 'none';
             }
             
-            // Create burst effect when clicked
             for(let i = 0; i < 8; i++) {
                 setTimeout(() => {
                     const note = document.createElement('div');
@@ -765,7 +752,6 @@
             }
         });
 
-        // Create music waves around the button
         function createMusicWaves() {
             if (!musicVibes) return;
             
@@ -789,7 +775,6 @@
             }
         }
 
-        // Add wave animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes waveExpand {
@@ -805,12 +790,10 @@
         `;
         document.head.appendChild(style);
 
-        // Start music vibes
         setTimeout(() => {
             createMusicWaves();
         }, 1000);
 
-        // Typing effect for the main message
         const messages = [
             "On this special day, I have something super important to ask you... 💕",
             "You light up my world like nobody else! ✨",
@@ -842,7 +825,6 @@
         
         setTimeout(typeWriter, 500);
 
-        // Create floating hearts - MORE OF THEM!
         const heartsContainer = document.getElementById('heartsContainer');
         const heartEmojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '💘', '💞', '💙', '💜', '🧡', '💚'];
         
@@ -859,15 +841,12 @@
             setTimeout(() => heart.remove(), 8000);
         }
         
-        // Create more hearts!
         setInterval(createHeart, 150);
         
-        // Initial burst of hearts
         for(let i = 0; i < 30; i++) {
             setTimeout(createHeart, i * 100);
         }
 
-        // Love meter animation - make it INFINITE!
         setTimeout(() => {
             const meter = document.getElementById('loveMeter');
             meter.style.width = '100%';
@@ -877,7 +856,6 @@
             }, 2000);
         }, 1000);
 
-        // Multi-heart clicking with love messages
         let clicks = 0;
         const multiHearts = document.querySelectorAll('.multi-heart');
         const clickCounter = document.getElementById('clickCounter');
@@ -888,7 +866,6 @@
                 clicks++;
                 clickCounter.textContent = `Love Clicks: ${clicks} 💘`;
                 
-                // Show the love message
                 const message = this.getAttribute('data-love');
                 loveMessage.textContent = message;
                 loveMessage.style.animation = 'none';
@@ -896,7 +873,6 @@
                     loveMessage.style.animation = 'heartbeat 0.5s ease';
                 }, 10);
                 
-                // Create MASSIVE heart explosion
                 for(let i = 0; i < 15; i++) {
                     setTimeout(() => {
                         const particle = document.createElement('div');
@@ -911,7 +887,6 @@
                     }, i * 50);
                 }
                 
-                // Make the heart beat
                 this.style.animation = 'heartBeat 0.5s ease';
                 setTimeout(() => {
                     this.style.animation = '';
@@ -919,7 +894,6 @@
             });
         });
 
-        // NO button is SUPER SCARED and runs away faster!
         const noBtn = document.getElementById('noBtn');
         let noBtnClicks = 0;
         const noMessages = [
@@ -943,7 +917,6 @@
             noBtnClicks++;
             this.textContent = noMessages[Math.min(noBtnClicks - 1, noMessages.length - 1)];
             
-            // Make it run away faster each time
             noButtonSpeed += 0.5;
             
             const maxX = window.innerWidth - this.offsetWidth - 40;
@@ -958,7 +931,6 @@
             this.style.top = newY + 'px';
             this.style.transform = `rotate(${Math.random() * 360}deg) scale(${0.8 + Math.random() * 0.4})`;
             
-            // Create confusion particles
             for(let i = 0; i < 5; i++) {
                 const particle = document.createElement('div');
                 particle.innerHTML = '❓';
@@ -977,22 +949,12 @@
             alert("This button is on strike! It refuses to work! 😂\n\nPlease click the YES button instead! 💕");
         });
 
-        // YES button - ULTIMATE CELEBRATION!
         const yesBtn = document.getElementById('yesBtn');
         const celebration = document.getElementById('celebration');
 
         yesBtn.addEventListener('click', function() {
             celebration.style.display = 'flex';
             
-            // Make music louder for celebration!
-            bgMusic.volume = 1.0;
-            if (!isPlaying) {
-                bgMusic.play();
-                isPlaying = true;
-                musicControl.textContent = '🎵';
-            }
-            
-            // Create celebration sound effect visually with music notes
             for(let i = 0; i < 30; i++) {
                 setTimeout(() => {
                     const note = document.createElement('div');
@@ -1011,7 +973,6 @@
                 }, i * 50);
             }
             
-            // Create MASSIVE confetti storm
             for(let i = 0; i < 200; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
@@ -1029,7 +990,6 @@
                 }, i * 20);
             }
             
-            // Create fireworks effect
             const fireworks = document.getElementById('fireworks');
             for(let i = 0; i < 50; i++) {
                 setTimeout(() => {
@@ -1045,7 +1005,6 @@
                 }, i * 100);
             }
 
-            // Celebration animation
             celebration.animate([
                 { transform: 'scale(0) rotate(-180deg)', opacity: 0 },
                 { transform: 'scale(1.2) rotate(10deg)', opacity: 1 },
@@ -1055,13 +1014,11 @@
                 easing: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)'
             });
             
-            // Play success sound effect (visual representation)
             setTimeout(() => {
                 alert("🎊 CONGRATULATIONS! 🎊\n\nYou've just made someone the happiest person alive!\n\nPrepare for an amazing Valentine's Day! 💝");
             }, 2000);
         });
 
-        // Enhanced sparkle cursor effect
         let lastSparkle = 0;
         document.addEventListener('mousemove', function(e) {
             const now = Date.now();
@@ -1083,7 +1040,6 @@
             }
         });
         
-        // Random love messages that pop up
         const randomLoveMessages = [
             "💕 You're amazing!",
             "✨ You're a star!",
