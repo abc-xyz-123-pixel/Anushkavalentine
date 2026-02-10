@@ -3,753 +3,732 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💕 Anushka - The Most Epic Love Confession Ever! 💕</title>
+    <title>Happy Birthday Anushka! 🎂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f0f;
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .balloon {
+            position: absolute;
+            font-size: 3em;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(5deg);
+            }
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: firework-burst 1s ease-out forwards;
+        }
+
+        @keyframes firework-burst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty));
+            }
+        }
+
+        .sparkle-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ffd700;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle-float 2s ease-out forwards;
+        }
+
+        @keyframes sparkle-float {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0);
+            }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            animation: fadeIn 1s ease-in, pulse 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 20px 80px rgba(102, 126, 234, 0.5);
+            }
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            font-weight: normal;
+            letter-spacing: 2px;
+            animation: rainbow 3s ease-in-out infinite;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { color: #667eea; }
+            25% { color: #ff6b6b; }
+            50% { color: #4ecdc4; }
+            75% { color: #ffe66d; }
+        }
+
+        .name {
+            font-size: 4em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            margin-bottom: 30px;
+            animation: glow 2s ease-in-out infinite, wiggle 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: brightness(1) drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+            }
+            50% {
+                filter: brightness(1.3) drop-shadow(0 0 20px rgba(102, 126, 234, 0.8));
+            }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-2deg); }
+            75% { transform: rotate(2deg); }
+        }
+
+        .message {
+            font-size: 1.3em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .emoji {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: bounce 1s infinite, spin 3s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.1);
+            }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .sparkle {
+            color: #ffd700;
+            font-size: 2em;
+            display: inline-block;
+            animation: twinkle 1s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.3;
+                transform: scale(1.3);
+            }
+        }
+
+        .celebration-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .celebration-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .celebration-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .stars {
+            position: absolute;
+            font-size: 2em;
+            animation: star-float 3s ease-in-out infinite;
+        }
+
+        @keyframes star-float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.5;
+            }
+        }
+
+        .gift {
+            position: absolute;
+            font-size: 2.5em;
+            animation: gift-shake 2s ease-in-out infinite;
+        }
+
+        @keyframes gift-shake {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        .candle-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            border: 2px dashed #ffd700;
+        }
+
+        .candles-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .candle {
+            font-size: 4em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            animation: candle-flicker 2s ease-in-out infinite;
+        }
+
+        .candle.blown {
+            opacity: 0;
+            transform: scale(0) rotate(180deg);
+        }
+
+        @keyframes candle-flicker {
+            0%, 100% { 
+                filter: brightness(1);
+                transform: translateY(0);
+            }
+            50% { 
+                filter: brightness(1.3);
+                transform: translateY(-3px);
+            }
+        }
+
+        .instruction {
+            font-size: 1.1em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 15px 0;
+            animation: pulse-text 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-text {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .wish-input {
+            display: none;
+            margin-top: 20px;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .wish-input.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .wish-text {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1em;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            font-family: 'Georgia', serif;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .wish-text:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-wish-btn {
+            margin-top: 15px;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+            color: #333;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .submit-wish-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+        }
+
+        .wish-message {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            font-size: 1.2em;
+            animation: wishReveal 0.8s ease-out;
+        }
+
+        .wish-message.show {
+            display: block;
+        }
+
+        @keyframes wishReveal {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotateX(90deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateX(0deg);
+            }
+        }
+
+        .blown-count {
+            font-size: 1.2em;
+            color: #764ba2;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
 </head>
 <body>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-    font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    overflow-x: hidden; 
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-    min-height: 100vh;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="18" font-size="20">❤️</text></svg>'), auto;
-}
-
-@keyframes rainbow { 0% { filter: hue-rotate(0deg); } 100% { filter: hue-rotate(360deg); } }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 75% { transform: translateX(10px); } }
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
-@keyframes wiggle { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
-
-.hearts-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; }
-.heart { position: absolute; font-size: 30px; animation: floatHeart 8s infinite; opacity: 0.7; }
-@keyframes floatHeart { 
-    0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 0; }
-    10% { opacity: 0.8; transform: translateY(90vh) rotate(36deg) scale(1); }
-    100% { transform: translateY(-10vh) rotate(360deg) scale(0); opacity: 0; }
-}
-
-.container { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 20px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-
-.card { 
-    background: rgba(255, 255, 255, 0.98); 
-    border-radius: 30px; 
-    padding: 50px 40px; 
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); 
-    text-align: center;
-    position: relative;
-    animation: float 3s ease-in-out infinite;
-    border: 5px solid transparent;
-    background-clip: padding-box;
-}
-
-.card::before {
-    content: '';
-    position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
-    background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ff0080, #ff0080);
-    border-radius: 30px;
-    z-index: -1;
-    animation: rainbow 3s linear infinite;
-    background-size: 400% 400%;
-}
-
-h1 { 
-    font-size: 3.5em; 
-    background: linear-gradient(45deg, #e91e63, #9c27b0, #2196f3, #4caf50, #ff9800, #e91e63);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-    animation: rainbow 2s ease infinite, pulse 1s ease-in-out infinite;
-    position: relative;
-}
-
-.emoji-big { font-size: 5em; animation: bounce 1s infinite, spin 3s linear infinite; margin: 20px 0; }
-.message { font-size: 1.3em; color: #333; margin: 30px 0; line-height: 2; }
-.highlight { color: #e91e63; font-weight: bold; font-size: 1.3em; animation: pulse 1s infinite; }
-
-.love-counter { 
-    font-size: 2em; 
-    color: #e91e63; 
-    font-weight: bold; 
-    margin: 20px 0;
-    padding: 20px;
-    background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
-    border-radius: 20px;
-    animation: wiggle 2s ease-in-out infinite;
-}
-
-.button-container { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-.btn { 
-    padding: 25px 50px; 
-    font-size: 1.5em; 
-    border: none; 
-    border-radius: 50px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-yes { 
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
-    color: white;
-    animation: pulse 1.5s ease-in-out infinite;
-}
-
-.btn-yes:hover { 
-    transform: scale(1.3) rotate(-10deg); 
-    box-shadow: 0 15px 40px rgba(245, 87, 108, 0.8);
-    animation: shake 0.5s infinite;
-}
-
-.btn-no { 
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); 
-    color: #666;
-    font-size: 1em;
-}
-
-.reason-box {
-    background: linear-gradient(135deg, #fff0f5, #ffe6f0);
-    border: 4px dashed #e91e63;
-    padding: 30px;
-    margin: 30px 0;
-    border-radius: 20px;
-    text-align: left;
-    animation: wiggle 3s ease-in-out infinite;
-}
-
-.reason-box h3 { color: #e91e63; margin-bottom: 20px; font-size: 1.8em; text-align: center; }
-.reason-box li { 
-    margin: 15px 0; 
-    color: #555; 
-    font-size: 1.2em;
-    padding: 10px;
-    background: white;
-    border-radius: 10px;
-    transition: all 0.3s;
-}
-.reason-box li:hover { 
-    transform: translateX(20px) scale(1.05); 
-    background: #ffe6f0;
-    box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
-}
-
-.interactive-zone {
-    margin: 40px 0;
-    padding: 30px;
-    background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
-    border-radius: 20px;
-    border: 4px solid #e91e63;
-}
-
-.heart-click {
-    font-size: 4em;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: inline-block;
-    margin: 10px;
-}
-
-.heart-click:hover { 
-    transform: scale(1.5) rotate(20deg); 
-    filter: drop-shadow(0 0 20px rgba(233, 30, 99, 0.8));
-}
-
-.celebration {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 10000;
-    background: rgba(255, 255, 255, 0.98);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.celebration h2 {
-    font-size: 5em;
-    background: linear-gradient(45deg, #e91e63, #9c27b0, #2196f3, #e91e63);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: rainbow 2s ease infinite;
-    margin: 30px 0;
-}
-
-.confetti { 
-    position: fixed; 
-    width: 10px; 
-    height: 10px; 
-    animation: confetti-fall 3s linear forwards; 
-}
-@keyframes confetti-fall { to { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
-
-.particle {
-    position: fixed;
-    pointer-events: none;
-    animation: particle-float 2s ease-out forwards;
-    font-size: 40px;
-    z-index: 9999;
-}
-@keyframes particle-float {
-    0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
-    100% { transform: translate(var(--x), var(--y)) scale(0) rotate(360deg); opacity: 0; }
-}
-
-.warning-box {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
-    color: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin: 30px 0;
-    font-size: 1.3em;
-    animation: pulse 2s ease-in-out infinite;
-    border: 5px solid white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.love-meter {
-    margin: 30px 0;
-    padding: 20px;
-    background: white;
-    border-radius: 20px;
-}
-
-.meter-bar {
-    width: 100%;
-    height: 40px;
-    background: #e0e0e0;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-}
-
-.meter-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #f093fb, #f5576c, #f093fb);
-    width: 0%;
-    transition: width 3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.2em;
-    background-size: 200% 200%;
-    animation: rainbow 2s linear infinite;
-}
-
-.quote-box {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin: 30px 0;
-    font-size: 1.5em;
-    font-style: italic;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    animation: float 4s ease-in-out infinite;
-}
-
-.surprise-btn {
-    background: linear-gradient(135deg, #f093fb, #f5576c);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.2em;
-    cursor: pointer;
-    margin: 10px;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.surprise-btn:hover {
-    transform: scale(1.2) rotate(5deg);
-    box-shadow: 0 10px 30px rgba(233, 30, 99, 0.6);
-}
-
-.dance-emoji {
-    font-size: 3em;
-    display: inline-block;
-    animation: bounce 0.5s infinite;
-}
-
-.yes-counter {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, #f093fb, #f5576c);
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@media (max-width: 768px) {
-    h1 { font-size: 2em; }
-    .card { padding: 30px 20px; }
-    .btn { padding: 15px 30px; font-size: 1.2em; }
-    .emoji-big { font-size: 3em; }
-}
-
-.sparkle {
-    position: fixed;
-    pointer-events: none;
-    animation: sparkle-anim 1s ease-out forwards;
-    font-size: 30px;
-}
-@keyframes sparkle-anim {
-    0% { transform: scale(0) rotate(0deg); opacity: 1; }
-    100% { transform: scale(2) rotate(180deg); opacity: 0; }
-}
-</style>
-
-<div class="hearts-bg" id="heartsContainer"></div>
-<div class="yes-counter" id="yesCounter" style="display: none;">Times You Should've Said YES: <span id="yesCount">0</span></div>
-
-<div class="container">
-    <div class="card">
-        <div class="emoji-big">💝</div>
-        <h1>💕 DEAR ANUSHKA 💕</h1>
-        <div class="emoji-big">✨</div>
+    <div class="container" onclick="createCelebration()">
+        <div class="emoji">🎂</div>
+        <h1>Happy Birthday</h1>
+        <div class="name">Anushka</div>
+        <p class="message">
+            May this year bring you endless joy, beautiful moments, and all the dreams your heart holds.
+        </p>
+        <p class="message">
+            You deserve nothing but the best.
+        </p>
+        <p class="message">
+            Here's to another year of being amazing! <span class="sparkle">✨</span>
+        </p>
         
-        <div class="message">
-            <p><span class="highlight">BREAKING NEWS:</span> The most amazing person in the universe is reading this right now! 🌟</p>
-            <p>Scientists have confirmed: Anushka's smile can power an entire city! ⚡</p>
-            <p>Your cuteness level: <span class="highlight">∞ + 1000</span> (off the charts!) 📊</p>
-        </div>
-
-        <div class="love-counter" id="loveCounter">
-            💖 LOVE INTENSITY: <span id="loveLevel">CALCULATING...</span> 💖
-        </div>
-
-        <div class="love-meter">
-            <h3 style="color: #e91e63; margin-bottom: 15px;">My Love For You Meter</h3>
-            <div class="meter-bar">
-                <div class="meter-fill" id="loveMeter">0%</div>
+        <div class="candle-section">
+            <div class="instruction">🎂 Blow out the candles and make a wish! 🎂</div>
+            <div class="blown-count">Candles lit: <span id="candleCount">5</span>/5</div>
+            <div class="candles-container" id="candlesContainer">
+                <div class="candle" onclick="blowCandle(this)">🕯️</div>
+                <div class="candle" onclick="blowCandle(this)">🕯️</div>
+                <div class="candle" onclick="blowCandle(this)">🕯️</div>
+                <div class="candle" onclick="blowCandle(this)">🕯️</div>
+                <div class="candle" onclick="blowCandle(this)">🕯️</div>
+            </div>
+            <div class="instruction" style="font-size: 0.9em; color: #888;">Click or tap on candles to blow them out! 💨</div>
+            
+            <div class="wish-input" id="wishInput">
+                <p style="color: #667eea; font-weight: bold; margin-bottom: 10px;">✨ Now make your wish! ✨</p>
+                <textarea class="wish-text" id="wishText" placeholder="Write your birthday wish here..."></textarea>
+                <button class="submit-wish-btn" onclick="submitWish()">🌟 Make the Wish! 🌟</button>
+            </div>
+            
+            <div class="wish-message" id="wishMessage">
+                <div style="font-size: 2em; margin-bottom: 10px;">🎊✨🎉</div>
+                <div>Your wish has been sent to the universe!</div>
+                <div style="margin-top: 10px; font-size: 0.9em;">May all your dreams come true, Anushka! 💫</div>
             </div>
         </div>
-
-        <div class="interactive-zone">
-            <h3 style="color: #e91e63; margin-bottom: 20px;">💕 CLICK THESE HEARTS TO UNLEASH THE LOVE! 💕</h3>
-            <div>
-                <span class="heart-click" data-msg="You're BREATHTAKING! 😍">❤️</span>
-                <span class="heart-click" data-msg="You're my SUNSHINE! ☀️">💖</span>
-                <span class="heart-click" data-msg="You're PERFECT! ✨">💕</span>
-                <span class="heart-click" data-msg="You're my EVERYTHING! 🌟">💝</span>
-                <span class="heart-click" data-msg="I'm CRAZY about you! 🎉">💗</span>
-                <span class="heart-click" data-msg="You're a GODDESS! 👑">💓</span>
-                <span class="heart-click" data-msg="You're MAGICAL! 🎪">💘</span>
-                <span class="heart-click" data-msg="You're INCREDIBLE! 🚀">💞</span>
-            </div>
-            <div id="heartMsg" style="font-size: 2em; color: #e91e63; font-weight: bold; margin-top: 20px; min-height: 60px;"></div>
-            <div style="font-size: 1.5em; color: #666; margin-top: 10px;">
-                💘 Love Clicks: <span id="clickCount" style="color: #e91e63; font-weight: bold;">0</span> 💘
-            </div>
-        </div>
-
-        <div class="reason-box">
-            <h3>🎯 20 REASONS WHY YOU SHOULD SAY YES! 🎯</h3>
-            <ul style="list-style: none;">
-                <li>🎉 1. You'll get UNLIMITED hugs (with a lifetime warranty!)</li>
-                <li>🍫 2. I'll share ALL my food with you (even pizza crust!)</li>
-                <li>😂 3. I'll make you laugh until you cry happy tears!</li>
-                <li>🎵 4. I'll sing to you (warning: may cause uncontrollable laughter!)</li>
-                <li>🌟 5. You'll be treated like the QUEEN you are! 👑</li>
-                <li>💕 6. I'll remind you how amazing you are EVERY. SINGLE. DAY.</li>
-                <li>🎁 7. Random surprise gifts just because you exist!</li>
-                <li>☕ 8. I'll bring you coffee/tea perfectly made!</li>
-                <li>🎮 9. I'll let you win at games (sometimes!)</li>
-                <li>🌙 10. I'll stay up late talking about anything and everything!</li>
-                <li>📱 11. Good morning texts GUARANTEED!</li>
-                <li>🎬 12. Netflix binge-watching partner for life!</li>
-                <li>🍕 13. Pizza dates at 2 AM? DONE!</li>
-                <li>🎨 14. I'll appreciate ALL your weird quirks!</li>
-                <li>🚀 15. Together we'll reach the moon and beyond!</li>
-                <li>💝 16. Unlimited "I love you"s (no subscription required!)</li>
-                <li>🎪 17. Every day will be an adventure!</li>
-                <li>🌈 18. I'll be your rainbow after every storm!</li>
-                <li>⭐ 19. I'll support all your dreams and goals!</li>
-                <li>💖 20. You'll have someone who thinks you're PERFECT!</li>
-            </ul>
-        </div>
-
-        <div class="warning-box">
-            <h3 style="margin-bottom: 15px; font-size: 2em;">⚠️ URGENT WARNING! ⚠️</h3>
-            <p style="line-height: 1.8;">
-                Side effects of saying YES include:<br>
-                ✨ Excessive happiness<br>
-                💕 Permanent smile<br>
-                🎉 Spontaneous dancing<br>
-                😊 Feeling like the luckiest person alive<br>
-                💝 Being loved more than pizza (and that's A LOT!)<br>
-                🌟 Daily compliments overload<br>
-                🎊 Life becoming a romantic comedy!
-            </p>
-        </div>
-
-        <div style="margin: 30px 0;">
-            <button class="surprise-btn" onclick="surpriseMe(1)">🎁 Surprise #1</button>
-            <button class="surprise-btn" onclick="surpriseMe(2)">🎁 Surprise #2</button>
-            <button class="surprise-btn" onclick="surpriseMe(3)">🎁 Surprise #3</button>
-            <div id="surpriseMsg" style="font-size: 1.5em; color: #e91e63; font-weight: bold; margin-top: 20px; min-height: 40px;"></div>
-        </div>
-
-        <div class="quote-box">
-            <p>"In a world full of trends, you are a TIMELESS MASTERPIECE! 🎨"</p>
-            <p style="margin-top: 15px; font-size: 0.8em; font-style: normal;">- Someone who's absolutely OBSESSED with you (Me! 😊)</p>
-        </div>
-
-        <h2 style="color: #e91e63; margin: 40px 0; font-size: 3em; animation: pulse 1s infinite;">
-            💝 WILL YOU BE MY VALENTINE? 💝
-        </h2>
-
-        <div style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e); padding: 25px; border-radius: 20px; margin: 25px 0; border: 4px solid #e91e63;">
-            <p style="font-size: 1.5em; color: #d63031; font-weight: bold;">
-                🎯 IMPORTANT: There's only ONE correct answer here...<br>
-                (Hint: It starts with "Y" and ends with "ES"!) 😉
-            </p>
-        </div>
-
-        <div class="button-container">
-            <button class="btn btn-yes" id="yesBtn">
-                <span style="position: relative; z-index: 1;">YES! YES! A MILLION TIMES YES! 💖</span>
-            </button>
-            <button class="btn btn-no" id="noBtn">Try clicking me... 🤔</button>
-        </div>
-
-        <p style="margin-top: 30px; color: #999; font-style: italic; font-size: 1.2em; line-height: 1.8;">
-            P.S. - The other button is cursed and will run away! 🏃‍♂️💨<br>
-            P.P.S. - I've been practicing this moment in my head for MONTHS! 💭<br>
-            P.P.P.S. - You're literally the best thing that ever happened! 🌟<br>
-            P.P.P.P.S. - Please say yes? 🥺 (Puppy eyes activated!)
-        </p>
-
-        <div style="margin-top: 40px; font-size: 1.3em;">
-            <span class="dance-emoji">💃</span>
-            <span class="dance-emoji" style="animation-delay: 0.1s;">🕺</span>
-            <span class="dance-emoji" style="animation-delay: 0.2s;">💃</span>
-            <span class="dance-emoji" style="animation-delay: 0.3s;">🕺</span>
-        </div>
-    </div>
-</div>
-
-<div class="celebration" id="celebration">
-    <div style="font-size: 15em; animation: spin 2s linear infinite;">🎉</div>
-    <h2>YAAAAAAAAAAY! 💕</h2>
-    <div style="font-size: 2.5em; color: #666; text-align: center; max-width: 800px; line-height: 2; margin: 30px; padding: 30px; background: white; border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-        <p style="margin: 20px 0;">🎊 YOU JUST MADE ME THE HAPPIEST PERSON IN THE ENTIRE UNIVERSE! 🎊</p>
-        <p style="margin: 20px 0;">💝 Anushka, I've been dreaming about this moment FOREVER! 💝</p>
-        <p style="margin: 20px 0;">🌟 Get ready for the MOST AMAZING Valentine's Day in HISTORY! 🌟</p>
-        <p style="margin: 20px 0;">🥰 I promise to make you smile EVERY. SINGLE. DAY! 🥰</p>
-        <div style="font-size: 2em; margin: 30px 0;">
-            <span class="dance-emoji">💑</span>
-            <span class="dance-emoji" style="animation-delay: 0.2s;">💕</span>
-            <span class="dance-emoji" style="animation-delay: 0.4s;">💖</span>
-            <span class="dance-emoji" style="animation-delay: 0.6s;">✨</span>
-        </div>
-        <p style="margin: 30px 0; font-size: 1.2em; background: linear-gradient(45deg, #e91e63, #9c27b0, #2196f3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;">
-            I LOVE YOU TO THE MOON, BACK, AROUND THE UNIVERSE, AND INFINITY! 🚀🌙💫
-        </p>
-        <p style="margin: 20px 0; color: #e91e63; font-size: 1.3em;">
-            ✨ YOU + ME = PERFECT FOREVER ✨
-        </p>
-    </div>
-</div>
-
-<script>
-// Hearts background
-const heartsContainer = document.getElementById('heartsContainer');
-const heartEmojis = ['❤️', '💕', '💖', '💗', '💓', '💝', '💘', '💞', '💙', '💜', '🧡', '💚', '🤍', '🖤'];
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
-    heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
-    heartsContainer.appendChild(heart);
-    setTimeout(() => heart.remove(), 8000);
-}
-setInterval(createHeart, 200);
-
-// Love meter
-setTimeout(() => {
-    const meter = document.getElementById('loveMeter');
-    meter.style.width = '100%';
-    setTimeout(() => {
-        meter.textContent = '∞% (INFINITE LOVE!)';
-    }, 3000);
-}, 1000);
-
-// Love level counter
-const loveLevels = [
-    "LOADING... 💭",
-    "CALCULATING... 🤔",
-    "MEASURING... 📊",
-    "OVER 9000! 🚀",
-    "BREAKING THE METER! 💥",
-    "INFINITY + 1! ♾️",
-    "ALL THE LOVE IN THE WORLD! 🌍",
-    "MORE THAN THERE ARE STARS! ⭐",
-    "ABSOLUTELY CRAZY AMOUNTS! 🎪",
-    "BEYOND MEASUREMENT! 💖"
-];
-let levelIndex = 0;
-setInterval(() => {
-    document.getElementById('loveLevel').textContent = loveLevels[levelIndex];
-    levelIndex = (levelIndex + 1) % loveLevels.length;
-}, 2000);
-
-// Interactive hearts
-let clickCount = 0;
-document.querySelectorAll('.heart-click').forEach(heart => {
-    heart.addEventListener('click', function(e) {
-        clickCount++;
-        document.getElementById('clickCount').textContent = clickCount;
-        document.getElementById('heartMsg').textContent = this.getAttribute('data-msg');
         
-        // Create explosion
-        for(let i = 0; i < 20; i++) {
+        <button class="celebration-btn" onclick="megaCelebration(event)">🎉 Celebrate! 🎉</button>
+    </div>
+
+    <script>
+        // Create confetti effect
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+            confetti.style.backgroundColor = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#a8e6cf', '#ff8b94', '#ffd700', '#ff69b4'][Math.floor(Math.random() * 7)];
+            confetti.style.width = Math.random() * 15 + 5 + 'px';
+            confetti.style.height = confetti.style.width;
+            document.body.appendChild(confetti);
+
             setTimeout(() => {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-                particle.style.left = e.clientX + 'px';
-                particle.style.top = e.clientY + 'px';
-                particle.style.setProperty('--x', (Math.random() - 0.5) * 500 + 'px');
-                particle.style.setProperty('--y', (Math.random() - 0.5) * 500 + 'px');
-                document.body.appendChild(particle);
-                setTimeout(() => particle.remove(), 2000);
-            }, i * 30);
+                confetti.remove();
+            }, 5000);
         }
+
+        // Create floating balloons
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            const balloonEmojis = ['🎈', '🎈', '🎈', '🎈'];
+            balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+            balloon.style.left = Math.random() * 90 + 'vw';
+            balloon.style.bottom = '-50px';
+            balloon.style.animationDelay = Math.random() * 2 + 's';
+            balloon.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(balloon);
+
+            setTimeout(() => {
+                balloon.remove();
+            }, 8000);
+        }
+
+        // Create fireworks
+        function createFirework(x, y) {
+            const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#a8e6cf', '#ff8b94', '#ffd700'];
+            const particles = 30;
+            
+            for (let i = 0; i < particles; i++) {
+                const firework = document.createElement('div');
+                firework.classList.add('firework');
+                firework.style.left = x + 'px';
+                firework.style.top = y + 'px';
+                firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const angle = (Math.PI * 2 * i) / particles;
+                const velocity = 50 + Math.random() * 50;
+                firework.style.setProperty('--tx', Math.cos(angle) * velocity + 'px');
+                firework.style.setProperty('--ty', Math.sin(angle) * velocity + 'px');
+                
+                document.body.appendChild(firework);
+                
+                setTimeout(() => firework.remove(), 1000);
+            }
+        }
+
+        // Create sparkle particles
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle-particle');
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            sparkle.style.background = ['#ffd700', '#ffff00', '#ff69b4', '#00ffff'][Math.floor(Math.random() * 4)];
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+
+        // Create stars
+        function createStars() {
+            const stars = document.createElement('div');
+            stars.classList.add('stars');
+            stars.textContent = '⭐';
+            stars.style.left = Math.random() * 100 + 'vw';
+            stars.style.top = Math.random() * 100 + 'vh';
+            stars.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(stars);
+
+            setTimeout(() => stars.remove(), 4000);
+        }
+
+        // Create gifts
+        function createGift() {
+            const gift = document.createElement('div');
+            gift.classList.add('gift');
+            gift.textContent = '🎁';
+            gift.style.left = Math.random() * 90 + 'vw';
+            gift.style.top = Math.random() * 80 + 'vh';
+            document.body.appendChild(gift);
+
+            setTimeout(() => gift.remove(), 5000);
+        }
+
+        // Celebration on click
+        function createCelebration() {
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => createSparkle(Math.random() * window.innerWidth, Math.random() * window.innerHeight), i * 100);
+            }
+        }
+
+        // Mega celebration button
+        function megaCelebration(event) {
+            event.stopPropagation();
+            
+            // Burst of fireworks
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 2);
+                }, i * 200);
+            }
+            
+            // Extra confetti
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => createConfetti(), i * 30);
+            }
+            
+            // Extra balloons
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createBalloon(), i * 300);
+            }
+            
+            // Stars burst
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => createStars(), i * 150);
+            }
+            
+            // Gifts
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => createGift(), i * 400);
+            }
+        }
+
+        // Continuous animations
+        setInterval(createConfetti, 200);
+        setInterval(createBalloon, 2000);
+        setInterval(createStars, 1500);
+        setInterval(() => {
+            createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 3);
+        }, 3000);
         
-        this.style.animation = 'bounce 0.5s ease';
-        setTimeout(() => this.style.animation = '', 500);
-    });
-});
-
-// Surprise messages
-const surprises = {
-    1: ["🎁 Did you know? Your smile is brighter than 1000 suns! ☀️", "🎁 Fun fact: You make my heart beat 200% faster! 💓", "🎁 Science says: You're 100% AMAZING! 🔬"],
-    2: ["🎊 Breaking: You're officially the cutest person ever! 📰", "🎊 Alert: Your awesomeness level is off the charts! 📈", "🎊 Update: I'm still crazy about you! 🎪"],
-    3: ["✨ Reminder: You're absolutely PERFECT! 💯", "✨ Notice: I think about you 24/7! ⏰", "✨ Warning: You might cause heart attacks from cuteness! 💘"]
-};
-let surpriseIndexes = {1: 0, 2: 0, 3: 0};
-function surpriseMe(num) {
-    const msgs = surprises[num];
-    document.getElementById('surpriseMsg').textContent = msgs[surpriseIndexes[num]];
-    surpriseIndexes[num] = (surpriseIndexes[num] + 1) % msgs.length;
-    
-    // Confetti burst
-    for(let i = 0; i < 50; i++) {
+        // Initial celebration
         setTimeout(() => {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.top = -20 + 'px';
-            confetti.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
-            confetti.style.width = (Math.random() * 10 + 5) + 'px';
-            confetti.style.height = (Math.random() * 10 + 5) + 'px';
-            document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 3000);
-        }, i * 20);
-    }
-}
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createConfetti(), i * 50);
+            }
+        }, 500);
 
-// No button chaos
-const noBtn = document.getElementById('noBtn');
-let noBtnClicks = 0;
-const noMessages = [
-    "Wait wait wait! 🤔",
-    "Are you SURE? 🥺",
-    "Really?? 😢",
-    "Come on! 💭",
-    "Please? 🙏",
-    "Pretty please? 🥺",
-    "I'll cry! 😭",
-    "Don't do this! 💔",
-    "Think about it! 🤔",
-    "Give me a chance! 🌟",
-    "Just say YES! ❤️",
-    "You know you want to! 😏",
-    "The YES button is lonely! 💕",
-    "I'm begging you! 🙇",
-    "Pretty pretty please? 🎀",
-    "With a cherry on top? 🍒",
-    "I'll do anything! 💪",
-    "Just click YES! ➡️",
-    "This button is broken! 🔨",
-    "ERROR 404: NO not found! ⚠️"
-];
+        // Candle blowing functionality
+        let candlesBlown = 0;
+        const totalCandles = 5;
 
-let noSpeed = 1;
-let noSize = 1;
+        function blowCandle(candle) {
+            if (candle.classList.contains('blown')) return;
+            
+            candle.classList.add('blown');
+            candlesBlown++;
+            
+            // Update counter
+            document.getElementById('candleCount').textContent = totalCandles - candlesBlown;
+            
+            // Create smoke effect
+            createSmoke(candle);
+            
+            // Sparkles when blowing
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const rect = candle.getBoundingClientRect();
+                    createSparkle(rect.left + rect.width / 2, rect.top);
+                }, i * 50);
+            }
+            
+            // Play celebration when all candles are blown
+            if (candlesBlown === totalCandles) {
+                setTimeout(() => {
+                    allCandlesBlown();
+                }, 500);
+            }
+        }
 
-noBtn.addEventListener('mouseenter', function() {
-    noBtnClicks++;
-    document.getElementById('yesCounter').style.display = 'block';
-    document.getElementById('yesCount').textContent = noBtnClicks;
-    
-    this.textContent = noMessages[Math.min(noBtnClicks - 1, noMessages.length - 1)];
-    noSpeed += 0.3;
-    noSize = Math.max(0.3, noSize - 0.05);
-    
-    const maxX = window.innerWidth - this.offsetWidth - 40;
-    const maxY = window.innerHeight - this.offsetHeight - 40;
-    
-    this.style.position = 'fixed';
-    this.style.transition = `all ${0.2 / noSpeed}s ease`;
-    this.style.left = Math.random() * maxX + 'px';
-    this.style.top = Math.random() * maxY + 'px';
-    this.style.transform = `rotate(${Math.random() * 720 - 360}deg) scale(${noSize})`;
-    
-    // Particles
-    for(let i = 0; i < 8; i++) {
-        const particle = document.createElement('div');
-        particle.innerHTML = ['❓', '😰', '🏃', '💨', '😅'][Math.floor(Math.random() * 5)];
-        particle.className = 'particle';
-        particle.style.left = this.offsetLeft + this.offsetWidth/2 + 'px';
-        particle.style.top = this.offsetTop + this.offsetHeight/2 + 'px';
-        particle.style.setProperty('--x', (Math.random() - 0.5) * 300 + 'px');
-        particle.style.setProperty('--y', (Math.random() - 0.5) * 300 + 'px');
-        document.body.appendChild(particle);
-        setTimeout(() => particle.remove(), 2000);
-    }
-    
-    // Make YES button bigger
-    const yesBtn = document.getElementById('yesBtn');
-    const newSize = 1 + (noBtnClicks * 0.1);
-    yesBtn.style.transform = `scale(${Math.min(newSize, 2)})`;
-});
+        function createSmoke(candle) {
+            const rect = candle.getBoundingClientRect();
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const smoke = document.createElement('div');
+                    smoke.textContent = '💨';
+                    smoke.style.position = 'absolute';
+                    smoke.style.left = rect.left + 'px';
+                    smoke.style.top = rect.top + 'px';
+                    smoke.style.fontSize = '2em';
+                    smoke.style.opacity = '0.8';
+                    smoke.style.pointerEvents = 'none';
+                    smoke.style.animation = 'smoke-rise 1.5s ease-out forwards';
+                    document.body.appendChild(smoke);
+                    
+                    setTimeout(() => smoke.remove(), 1500);
+                }, i * 200);
+            }
+        }
 
-noBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    const funnyMessages = [
-        "😂 HAHA! This button doesn't work!\n\nTry the BIG SHINY YES button instead! 💖",
-        "🚫 ERROR 404: 'No' not found!\n\nDid you mean: YES? 💕",
-        "⚠️ WARNING: This button has been disabled!\n\nPlease use YES button for optimal results! ✨",
-        "🎪 CONGRATULATIONS!\n\nYou've found the fake button! The real one is YES! 🎉",
-        "💔 You've broken my heart!\n\nJust kidding! Click YES to fix it! 💖"
-    ];
-    alert(funnyMessages[Math.floor(Math.random() * funnyMessages.length)]);
-});
+        // Add smoke animation
+        const smokeStyle = document.createElement('style');
+        smokeStyle.textContent = `
+            @keyframes smoke-rise {
+                0% {
+                    transform: translateY(0) scale(1);
+                    opacity: 0.8;
+                }
+                100% {
+                    transform: translateY(-100px) scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(smokeStyle);
 
-// YES button celebration
-const yesBtn = document.getElementById('yesBtn');
-const celebration = document.getElementById('celebration');
+        function allCandlesBlown() {
+            // Show wish input
+            document.getElementById('wishInput').classList.add('show');
+            
+            // Big celebration
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 2);
+                }, i * 150);
+            }
+            
+            // Extra confetti burst
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => createConfetti(), i * 30);
+            }
+            
+            // Stars
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => createStars(), i * 100);
+            }
+        }
 
-yesBtn.addEventListener('click', function() {
-    celebration.style.display = 'flex';
-    
-    // MASSIVE confetti explosion
-    for(let i = 0; i < 500; i++) {
-        setTimeout(() => {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.top = -50 + 'px';
-            confetti.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
-            confetti.style.width = (Math.random() * 20 + 5) + 'px';
-            confetti.style.height = (Math.random() * 20 + 5) + 'px';
-            confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-            document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 5000);
-        }, i * 10);
-    }
-    
-    // Heart explosion
-    for(let i = 0; i < 100; i++) {
-        setTimeout(() => {
-            const heart = document.createElement('div');
-            heart.className = 'particle';
-            heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-            heart.style.left = window.innerWidth/2 + 'px';
-            heart.style.top = window.innerHeight/2 + 'px';
-            heart.style.setProperty('--x', (Math.random() - 0.5) * window.innerWidth + 'px');
-            heart.style.setProperty('--y', (Math.random() - 0.5) * window.innerHeight + 'px');
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 2000);
-        }, i * 20);
-    }
-    
-    setTimeout(() => {
-        alert("🎊💖✨ YESSSS! BEST. DAY. EVER! ✨💖🎊\n\n" +
-              "You've just made me the HAPPIEST person alive!\n\n" +
-              "Get ready for unlimited love, happiness, and adventures! 🚀\n\n" +
-              "I LOVE YOU SO MUCH! 💕💕💕");
-    }, 2000);
-});
-
-// Mouse sparkles
-let lastSparkle = 0;
-document.addEventListener('mousemove', function(e) {
-    const now = Date.now();
-    if(now - lastSparkle > 30 && Math.random() > 0.5) {
-        lastSparkle = now;
-        const sparkle = document.createElement('div');
-        sparkle.className = 'sparkle';
-        sparkle.innerHTML = ['✨', '💫', '⭐', '🌟', '💖', '💕'][Math.floor(Math.random() * 6)];
-        sparkle.style.left = e.clientX + 'px';
-        sparkle.style.top = e.clientY + 'px';
-        document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 1000);
-    }
-});
-
-// Random love messages
-const loveMessages = [
-    "💕 You're AMAZING!",
-    "✨ You're a STAR!",
-    "💖 You're PERFECT!",
-    "🌟 You're WONDERFUL!",
-    "💝 You're EVERYTHING!",
-    "🎯 You're THE BEST!",
-    "👑 You're a QUEEN!",
-    "🚀 You're OUT OF THIS WORLD!",
-    "🎨 You're a MASTERPIECE!",
-    "🌈 You're MAGICAL!"
-];
-
-setInterval(() => {
-    if(Math.random() > 0.6) {
-        const msg = document.createElement('div');
-        msg.textContent = loveMessages[Math.floor(Math.random() * loveMessages.length)];
-        msg.style.position = 'fixed';
-        msg.style.left = Math.random() * (window.innerWidth - 200) + 'px';
-        msg.style.top = Math.random() * (window.innerHeight - 100) + 'px';
-        msg.style.fontSize = (Math.random() * 20 + 25) + 'px';
-        msg.style.fontWeight = 'bold';
-        msg.style.color = '#e91e63';
-        msg.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
-        msg.style.pointerEvents = 'none';
-        msg.style.zIndex = '100';
-        msg.style.animation = 'float 3s ease-out';
-        document.body.appendChild(msg);
-        setTimeout(() => msg.remove(), 3000);
-    }
-}, 2000);
-
-// Initial love bomb
-setTimeout(() => {
-    for(let i = 0; i < 30; i++) {
-        setTimeout(createHeart, i * 100);
-    }
-}, 500);
-</script>
+        function submitWish() {
+            const wishText = document.getElementById('wishText').value;
+            
+            if (wishText.trim() === '') {
+                alert('Please write your wish first! ✨');
+                return;
+            }
+            
+            // Hide input, show message
+            document.getElementById('wishInput').style.display = 'none';
+            document.getElementById('wishMessage').classList.add('show');
+            
+            // Mega celebration for wish
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 2);
+                }, i * 100);
+            }
+            
+            // Confetti explosion
+            for (let i = 0; i < 100; i++) {
+                setTimeout(() => createConfetti(), i * 20);
+            }
+            
+            // Balloons
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => createBalloon(), i * 200);
+            }
+            
+            // Stars everywhere
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createStars(), i * 100);
+            }
+        }
+    </script>
 </body>
 </html>
