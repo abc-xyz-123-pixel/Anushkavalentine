@@ -1,0 +1,8 @@
+{
+  "name": "birthday-wish-anushka",
+  "version": "1.0.0",
+  "description": "Birthday wish website for Anushka",
+  "scripts": {
+    "start": "serve ."
+  }
+}
